@@ -15,3 +15,6 @@ Funtional tests with espresso:
 ![Functional test run configruation](ScreenshotFunctionalTest.png)
 
 When you switch between the two sets of tests also remember to switch Test artifact in the Build Variants tab in Android studio.
+
+
+![Build variants](buildVariants.png)
