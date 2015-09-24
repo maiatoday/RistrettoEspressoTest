@@ -1,8 +1,26 @@
 apply plugin: 'com.android.application'
 
+def Properties keyProps = new Properties()
+keyProps.load(project.rootProject.file('signing.properties').newDataInputStream())
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
+
+    signingConfigs {
+        debug {
+            storeFile file(keyProps["debugStoreFile"])
+            storePassword keyProps["debugStorePassword"]
+            keyAlias keyProps["debugKeyAlias"]
+            keyPassword keyProps["debugKeyPassword"]
+        }
+        release {
+            storeFile file(keyProps["releaseStoreFile"])
+            storePassword keyProps["releaseStorePassword"]
+            keyAlias keyProps["releaseKeyAlias"]
+            keyPassword keyProps["releaseKeyPassword"]
+        }
+    }
 
     defaultConfig {
         applicationId "net.maiatoday.ristretto"
@@ -12,8 +30,13 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
