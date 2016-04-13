@@ -22,7 +22,7 @@ public class MainActivityTest {
 
     @Test
     public void shouldBeAbleToLaunchMainScreen() {
-        onView(withText("Hello")).check(ViewAssertions.matches(isDisplayed()));
+        onView(withText("Hello, ohai!")).check(ViewAssertions.matches(isDisplayed()));
 
     }
 
