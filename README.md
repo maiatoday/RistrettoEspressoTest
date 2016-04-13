@@ -20,3 +20,10 @@ When you switch between the two sets of tests also remember to switch Test artif
 
 
 ![Build variants](buildVariants.png)
+
+## Making it build
+
+* Copy the signing.properties.template file to signing.properties
+* Put debug.keystore file from ~/.android into app directory
+* If you want to build a release version, make a keystore file and put it in the app directory with the name release-key.keystore or change the name in the signing.properties file. Also fill in the alias and password in the signing.properties file.
+* Make sure the release-key.keystore or it's equivalent is in the .gitignore in the app directory so that you don't check it into the project.
