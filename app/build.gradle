@@ -51,3 +51,5 @@ dependencies {
     androidTestCompile ('com.android.support.test:rules:0.5') { exclude module: 'support-annotations' }
     androidTestCompile ('com.android.support.test.espresso:espresso-core:2.2.2') { exclude module: 'support-annotations' }
 }
+
+apply plugin: 'com.google.gms.google-services'
