@@ -14,7 +14,8 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 /**
  * Created by maia on 2015/09/08.
- */@RunWith(AndroidJUnit4.class)
+ */
+@RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
 
     @Rule
@@ -25,8 +26,6 @@ public class MainActivityTest {
         onView(withText("Hello, ohai!")).check(ViewAssertions.matches(isDisplayed()));
 
     }
-
-
 
 
 }
